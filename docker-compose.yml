@@ -1,0 +1,22 @@
+version: "3.5"
+
+services:
+    redis:
+      image: redis
+    database:
+      image: postgres
+      environment:
+        POSTGRES_PASSWORD: D3s4rr0ll0R3t0
+        POSTGRES_USER: DanielaMartinez
+        POSTGRES_DB: reto
+    api:
+        image: RetoDigital
+        ports:
+          - "8081:8081"
+        environment:
+          DB_HOST: database
+          REDIS_HOST: redis
+        command: ["./wait-for-it.sh", "database"]
+    
+        
+    
