@@ -8,6 +8,7 @@ const config = {
   postgresPassword: procees.env.POSTGRES_PASSWORD,
   postgresUser: procees.env.POSTGRES_USER,
   postgresDb: procees.env.POSTGRES_DB,
+  version: process.env.VERSION
 };
 
 module.exports = config;
