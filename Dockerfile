@@ -3,6 +3,6 @@ WORKDIR /app
 COPY package-lock.json .
 COPY package.json .
 COPY . .
-COPY waitforit.sh .
 RUN npm install
+COPY wait-for-it.sh .
 CMD node server.js
